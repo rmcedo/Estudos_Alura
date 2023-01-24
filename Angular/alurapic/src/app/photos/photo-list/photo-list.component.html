@@ -1,13 +1,6 @@
-<ol class="list-unstyled row">
-  <li *ngFor="let photo of photos" class="col-4">
+<ap-search></ap-search>
+<ap-photos [photos]="photos | filterByDescription: filter">
+</ap-photos>
 
-    <ap-photo
-        [url]="photo.url"
-        [description]="photo.description">
-    </ap-photo>
-
-  </li>
-
-
-</ol>
-
+<ap-load-button  (click)="load()" [hasMore]="hasMore">
+</ap-load-button>
